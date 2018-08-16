@@ -8,3 +8,6 @@ Matplotlib
 
 Usage:  
 Type command 'python main.py -h' for detail.
+
+![image](https://github.com/DavidLining/3D_PathPlanner/blob/master/Figure_1.png)
+![image](https://github.com/DavidLining/3D_PathPlanner/blob/master/Figure_2.png)

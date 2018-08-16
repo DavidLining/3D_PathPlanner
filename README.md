@@ -2,7 +2,7 @@
 Robot 3D path planning with Astar and Dstar Algorithms  
 Environment:  
 python3.6  
-Numoy  
+Numpy  
 Matplotlib   
 
 

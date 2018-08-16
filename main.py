@@ -82,22 +82,23 @@ if __name__ == "__main__":
         print('Agents number: ', agents_num)
         print('Safe Radius: ', safe_R)
         print('Seed: ', seed)
-        space_boundary = (10, 10, 10)
-        env = Env(space_boundary = space_boundary, is_seperate=False,
-                  agents_num=100, seed = seed, safe_R = safe_R)
+        env = Env(space_boundary = space_boundary,
+                  agents_num=agents_num, seed = seed, safe_R = safe_R)
         if use_astar:
             print('Algorithm: Astar')
             astar = Astar(env.agents_pos[:, 0], env.agents_targ[:, 0], env.agents_pos,
                           env.space_boundary, env.walk_dirs)
             pathData = astar.search()
             pathsData = {"Plan Path": pathData}
-            draw_path(env.space_boundary ,env.agents_pos, pathsData, env.agents_targ)
+            draw_path(env.space_boundary ,env.agents_pos, pathsData,
+                      env.agents_targ, title = "Path Plan with A*")
         elif use_dstar:
             print('Algorithm: Dstar')
             space_map = Map(env.space_boundary, env.walk_dirs)
             dstar = Dstar(space_map, env.space_boundary)
             paths = dstar.search( env.agents_pos[:, 0], env.agents_targ[:, 0], env.agents_pos)
             pathsData = {"Path Without Obstacle": paths[0], "Path With Obstacle": paths[1]}
-            draw_path(env.space_boundary ,env.agents_pos, pathsData, env.agents_targ)
+            draw_path(env.space_boundary ,env.agents_pos, pathsData,
+                      env.agents_targ, title = "Path Plan with A*")
     print("Finish!")
     sys.exit()

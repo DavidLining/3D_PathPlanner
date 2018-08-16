@@ -8,7 +8,7 @@ Created on Mon Aug 13 10:41:24 2018
 from mpl_toolkits.mplot3d import Axes3D
 import matplotlib.pyplot as plt
 
-def draw_path(space_boundary, ptsData, pathsData, targData):
+def draw_path(space_boundary, ptsData, pathsData, targData, title='3D Path Plan'):
     colors = ['b', 'c', 'm', 'y', 'b', 'w']
     fig = plt.figure()
     ax = fig.gca(projection='3d')
@@ -21,7 +21,7 @@ def draw_path(space_boundary, ptsData, pathsData, targData):
     ax.set_zlim3d([0.0, space_boundary[2]])
     ax.set_zlabel('Z')
 
-    ax.set_title('3D Path Plan')
+    ax.set_title(title)
     ax.scatter(ptsData[0, :], ptsData[1, :], ptsData[2, :], c= 'g', marker = '^', label='Source')
     ax.scatter(targData[0, :], targData[1, :], targData[2, :], c= 'r', marker = 'x', label='Dest')
     i = 0

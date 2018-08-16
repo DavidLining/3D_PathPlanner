@@ -99,6 +99,6 @@ if __name__ == "__main__":
             paths = dstar.search( env.agents_pos[:, 0], env.agents_targ[:, 0], env.agents_pos)
             pathsData = {"Path Without Obstacle": paths[0], "Path With Obstacle": paths[1]}
             draw_path(env.space_boundary ,env.agents_pos, pathsData,
-                      env.agents_targ, title = "Path Plan with A*")
+                      env.agents_targ, title = "Path Plan with D*")
     print("Finish!")
     sys.exit()
